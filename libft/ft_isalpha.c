@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/14 18:47:00 by xuwang            #+#    #+#             */
-/*   Updated: 2021/05/14 19:47:16 by xuwang           ###   ########.fr       */
+/*   Created: 2021/04/24 21:44:10 by xuwang            #+#    #+#             */
+/*   Updated: 2021/04/24 21:44:11 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//push a - prend le premier élément au sommet de b et le met sur a. Ne fait rien si b est vide.
-// 将 b 栈的元素【0】推到 a 栈【0】 如果b 栈没有元素 不运行
+#include "libft.h"
 
-void    ft_pa(int *a, int *b)
+int	ft_isalpha(int c)
 {
-    if (!*b)
-        return;
-    else
-        a[0] = b[0];
-        
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }

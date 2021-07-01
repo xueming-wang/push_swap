@@ -1,14 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ra.c                                               :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/14 18:47:34 by xuwang            #+#    #+#             */
-/*   Updated: 2021/05/14 19:01:01 by xuwang           ###   ########.fr       */
+/*   Created: 2021/04/24 21:43:59 by xuwang            #+#    #+#             */
+/*   Updated: 2021/04/24 21:44:00 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//rotate a - décale d’une position vers le haut tous les élements de la pile a. Le premier élément devient le dernier.
-//将 a 栈所有元素上移（前移）一位，第一个元素变为最后一位元素。
+#include "libft.h"
+
+int	ft_isprint(int c)
+{
+	return (c >= 32 && c <= 126);
+}
