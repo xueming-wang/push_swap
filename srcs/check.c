@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 20:08:20 by xuwang            #+#    #+#             */
-/*   Updated: 2021/07/01 20:08:41 by xuwang           ###   ########.fr       */
+/*   Created: 2021/06/23 14:14:36 by xuwang            #+#    #+#             */
+/*   Updated: 2021/06/24 17:30:47 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-#include <stdio.h>
-
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+#include "push_swap.h"
+int check_num(char c)
 {
-	if (lst)
-	{
-		if (del)
-			(del)(lst->content);
-		free (lst);
-	}
+    
 }
+
+
+
+static int    check_
