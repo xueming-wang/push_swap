@@ -6,41 +6,41 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 14:42:13 by xuwang            #+#    #+#             */
-/*   Updated: 2021/07/01 14:38:29 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/07/03 19:38:03 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-static void	show_stack_v(t_list *a, t_list *b)
-{
-	if (a == NULL && b == NULL)
-		return ;
-	if (a && b)
-		printf("| %12d | %-12d |\n", (int)a->content, (int)b->content);
-	else if (a)
-		printf("| %12d | %-12c |\n", (int)a->content, ' ');
-	else if (b)
-		printf("| %12c | %-12d |\n", ' ', (int)b->content);
-	if (a && b)
-		show_stack_v(a->next, b->next);
-	else if (a)
-		show_stack_v(a->next, NULL);
-	else if (b)
-		show_stack_v(NULL, b->next);
-}
+// static void	show_stack_v(t_list *a, t_list *b)
+// {
+// 	if (a == NULL && b == NULL)
+// 		return ;
+// 	if (a && b)
+// 		printf("| %12d | %-12d |\n", (int)a->content, (int)b->content);
+// 	else if (a)
+// 		printf("| %12d | %-12c |\n", (int)a->content, ' ');
+// 	else if (b)
+// 		printf("| %12c | %-12d |\n", ' ', (int)b->content);
+// 	if (a && b)
+// 		show_stack_v(a->next, b->next);
+// 	else if (a)
+// 		show_stack_v(a->next, NULL);
+// 	else if (b)
+// 		show_stack_v(NULL, b->next);
+// }
 
-void	option_v(t_stack *stacks)
-{
-	usleep(50000);
-	printf("\033[2J\033[H");
-	printf("-------------------------------\n");
-	printf("| %12s | %-12s |\n", "Stack A", "Stack B");
-	printf("-------------------------------\n");
-	show_stack_v(stacks->a, stacks->b);
-	printf("-------------------------------\n");
-}
+// void	option_v(t_stack *stacks)
+// {
+// 	usleep(50000);
+// 	printf("\033[2J\033[H");
+// 	printf("-------------------------------\n");
+// 	printf("| %12s | %-12s |\n", "Stack A", "Stack B");
+// 	printf("-------------------------------\n");
+// 	show_stack_v(stacks->a, stacks->b);
+// 	printf("-------------------------------\n");
+// }
 
 
 
@@ -58,11 +58,11 @@ static void   action_sepa(t_stack *stack, int size)
     {
         if ((int)stack->a->content < mid)
         {
-            ft_pb(stack);
+            ft_pb(stack, 1);
             i++;
         }
         else
-            ft_ra(stack);
+            ft_ra(stack, 1);
     } 
     
 }
@@ -87,12 +87,12 @@ static void    action_b_list(t_stack *stack)
         {
             if ((int)stack->b->content >= mid)
             {
-                ft_pa(stack);
+                ft_pa(stack, 1);
                 i--;
                 count++;
             }
             else
-                ft_rb(stack);
+                ft_rb(stack, 1);
         }
         ft_lstadd_front(&stack->part_size, ft_lstnew((void *)(intptr_t)count));
     }
@@ -114,22 +114,22 @@ static void    action_b_list(t_stack *stack)
     {
         if ((int)stack->a->content >= mid)
         {
-            ft_ra(stack);
+            ft_ra(stack, 1);
             j++;
         }
         else
-            ft_pb(stack);
+            ft_pb(stack, 1);
         i++;
     }
     i = 0;
     while (i < j)
     {
-        ft_rra(stack);
+        ft_rra(stack, 1);
         i++;
     }
     b_to_a(stack);
     while (j--)
-        ft_pb(stack);
+        ft_pb(stack, 1);
     b_to_a(stack);
 }    
 //运行所有的 段落
@@ -148,14 +148,14 @@ static void    sort_all(t_stack *stack)
     {
         if ((int)tmp->content == 1)
         {
-            ft_ra(stack);
+            ft_ra(stack, 1);
         }
         else if ((int)tmp->content == 2)
         {
             if ((int)stack->a->content > (int)stack->a->next->content)
-                ft_sa(stack);
-            ft_ra(stack);
-            ft_ra(stack);
+                ft_sa(stack, 1);
+            ft_ra(stack, 1);
+            ft_ra(stack, 1);
             
         }
         else 
@@ -181,12 +181,12 @@ static void    sort_all(t_stack *stack)
     
     while (i < size2)
     {
-        ft_pb(stack);
+        ft_pb(stack, 1);
         i++;
     }
     sort_all(stack);
     
-    //option_v(stack);
+   
 }
 
 

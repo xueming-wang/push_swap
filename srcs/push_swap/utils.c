@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 15:11:43 by xuwang            #+#    #+#             */
-/*   Updated: 2021/07/01 12:48:22 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/07/03 17:37:07 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,14 +117,14 @@ void    b_to_a(t_stack *stack)
          smallest = ft_smallest(stack->b);
         if ((int)stack->b->content  == smallest)
         {
-            ft_pa(stack);
-            ft_ra(stack);
+            ft_pa(stack, 1);
+            ft_ra(stack, 1);
         }
         else if ((int)stack->b->content == biggest)
-            ft_pa(stack);
+            ft_pa(stack, 1);
         else 
-            ft_rb(stack);
+            ft_rb(stack, 1);
 }
     while ((int)stack->a->content != tmp)
-            ft_ra(stack);
+            ft_ra(stack, 1);
 } 

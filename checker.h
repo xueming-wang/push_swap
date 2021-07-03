@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 15:37:34 by xuwang            #+#    #+#             */
-/*   Updated: 2021/07/01 15:39:12 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/07/03 14:26:17 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 # define CHECKER_H
 # include "push_swap.h"
 
+void   read_and_check(t_stack *stack);
 
 #endif

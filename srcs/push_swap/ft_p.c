@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 18:47:00 by xuwang            #+#    #+#             */
-/*   Updated: 2021/06/25 18:25:42 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/07/03 19:53:01 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 #include "push_swap.h"
 
-void    ft_pa(t_stack *stack)
+void    ft_pa(t_stack *stack, int print)
 {
     void *tmp;  //保存元素
     
@@ -27,11 +27,12 @@ void    ft_pa(t_stack *stack)
     stack->b->next = stack->a; //b栈第二个元素变成a栈；
     stack->a = stack->b; //a栈的第一个元素位置放入b栈的第一个元素；
     stack->b = tmp;//b栈的第一个位置放入保存的第二个元素；
-    printf("pa\n");
+    if (print == 1)
+        printf("pa\n");
 
 }
 
-void    ft_pb(t_stack *stack)
+void    ft_pb(t_stack *stack, int print)
 {
     void *tmp;
     
@@ -41,27 +42,8 @@ void    ft_pb(t_stack *stack)
     stack->a->next = stack->b;
     stack->b = stack->a;
     stack->a = tmp;
-    printf("pb\n");
+    if (print == 1)
+        printf("pb\n");
 }
 
-// int main()
-// {
-//     t_stack *nbr;
 
-//     nbr = malloc(sizeof(t_stack));
-//     nbr->a = ft_lstnew((int *)1);
-//     nbr->a->next = ft_lstnew((int *)2);
-    
-    
-//     nbr->b = ft_lstnew((int *)3);
-//     nbr->b->next = ft_lstnew((int *)4);
-//     ft_pa(nbr);
-//     printf("%d\n", (int)nbr->a->content);
-//     printf("%d\n", (int)nbr->a->next->content);
-//     printf("%d\n", (int)nbr->a->next->next->content);
-    
-//     printf("%d\n", (int)nbr->b->content);
-   
-    
-   
-// }

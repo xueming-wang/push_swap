@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 18:45:44 by xuwang            #+#    #+#             */
-/*   Updated: 2021/06/25 18:26:09 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/07/03 17:26:39 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include "push_swap.h"
 
 
-void    ft_sa(t_stack *stack)
+void    ft_sa(t_stack *stack, int print)
 {
         void *tmp;  //保存数
 
@@ -28,10 +28,11 @@ void    ft_sa(t_stack *stack)
         tmp = stack->a->content;
         stack->a->content = stack->a->next->content;
         stack->a->next->content = tmp;
-        printf("sa\n");
+        if (print == 1)
+            printf("sa\n");
 }    
 
-void    ft_sb(t_stack *stack)
+void    ft_sb(t_stack *stack, int print)
 {
         void *tmp;
 
@@ -40,14 +41,16 @@ void    ft_sb(t_stack *stack)
         tmp = stack->b->content;
         stack->b->content = stack->b->next->content;
         stack->b->next->content = tmp;
-        printf("sb\n");
+        if (print == 1)
+            printf("sb\n");
 }
 
-void    ft_ss(t_stack *stack)
+void    ft_ss(t_stack *stack, int print)
 {
-    ft_sa(stack);
-    ft_sb(stack);
-    printf("ss\n");
+    ft_sa(stack, print);
+    ft_sb(stack, print);
+    if (print == 1)
+        printf("ss\n");
 }
 
 // int main()

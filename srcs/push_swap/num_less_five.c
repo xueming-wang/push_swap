@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:16:16 by xuwang            #+#    #+#             */
-/*   Updated: 2021/06/28 12:20:45 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/07/03 17:34:07 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@ void    ft_num_three(t_stack *stack)
 	biggest = ft_biggest(stack->a);
 	if (biggest == (int)stack->a->content)
 	{
-		ft_ra(stack);
+		ft_ra(stack, 1);
 		if ((int)stack->a->content > (int)stack->a->next->content)
-			ft_sa(stack);
+			ft_sa(stack, 1);
 	}
 	else if (biggest == (int)stack->a->next->content)
 	{
-		ft_rra(stack);
+		ft_rra(stack, 1);
 		if ((int)stack->a->content > (int)stack->a->next->content)
-			ft_sa(stack);
+			ft_sa(stack, 1);
 	}
 	else if (biggest == (int)stack->a->next->next->content)
     {
 		if ((int)stack->a->content > (int)stack->a->next->content)
-			ft_sa(stack);
+			ft_sa(stack, 1);
     }
 }
 
@@ -48,17 +48,17 @@ void    ft_num_five(t_stack *stack)
         while (ft_lstsize(stack->b) != 2)
         {
             if ((int)stack->a->content == biggest || (int)stack->a->content == smallest)
-                ft_pb(stack);
+                ft_pb(stack, 1);
             else
-                ft_ra(stack);
+                ft_ra(stack, 1);
         }
     
     ft_num_three(stack);
     if ((int)stack->b->content > (int)stack->b->next->content)
-        ft_sb(stack);
-    ft_pa(stack);
-    ft_pa(stack);
-    ft_ra(stack);
+        ft_sb(stack, 1);
+    ft_pa(stack, 1);
+    ft_pa(stack, 1);
+    ft_ra(stack, 1);
 }
 
 

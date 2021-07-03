@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 18:48:16 by xuwang            #+#    #+#             */
-/*   Updated: 2021/06/25 18:25:55 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/07/03 19:53:10 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
  #include "push_swap.h"
 
- void   ft_rra(t_stack *stack)
+ void   ft_rra(t_stack *stack, int print)
  {
      t_list *last_tmp;
      t_list *tmp;
@@ -30,10 +30,11 @@
         tmp = tmp->next;
     tmp->next = NULL;
     ft_lstadd_front(&stack->a,last_tmp); //把最后一位加到最前面
-    printf("rra\n");
+    if (print == 1)
+         printf("rra\n");
 }
 
- void   ft_rrb(t_stack *stack)
+ void   ft_rrb(t_stack *stack, int print)
  {
     t_list *last_tmp;
     t_list *tmp;
@@ -46,28 +47,16 @@
         tmp = tmp->next;
     tmp->next = NULL;
     ft_lstadd_front(&stack->b,last_tmp); 
-    printf("rrb\n");
+    if (print == 1)
+        printf("rrb\n");
     
  }
 
- void   ft_rrr(t_stack *stack)
+ void   ft_rrr(t_stack *stack, int print)
  {
-     ft_rra(stack);
-     ft_rrb(stack);
-     printf("rrr\n");
+     ft_rra(stack, print);
+     ft_rrb(stack, print);
+     if (print == 1)
+        printf("rrr\n");
  }
 
-//  int main()
-// {
-      
-//     t_stack *nbr;
-
-//     nbr = malloc(sizeof(t_stack));
-//     nbr->b = ft_lstnew((int *)1);
-//     nbr->b->next= ft_lstnew((int *)2);
-//     nbr->b->next->next = ft_lstnew((int *)3);
-//      ft_rrb(nbr);
-//      printf("%d\n", (int)nbr->b->content);
-//     printf("%d\n", (int)nbr->b->next->content);
-//      printf("%d\n", (int)nbr->b->next->next->content);
-// }
