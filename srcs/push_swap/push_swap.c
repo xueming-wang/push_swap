@@ -6,22 +6,12 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 17:52:12 by xuwang            #+#    #+#             */
-/*   Updated: 2021/07/03 19:59:54 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/07/04 16:06:20 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void printstack(t_list *stack)
-{
-    if (!stack)
-        return ;
-    while (stack)
-    {
-        printf("[%d]\n", (int)stack->content);
-        stack = stack->next;
-    }
-}
 static int  list_is_sort(t_stack*stack)
 {
     t_list *tmp;

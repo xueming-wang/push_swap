@@ -6,7 +6,7 @@
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/20 15:11:32 by xuwang            #+#    #+#              #
-#    Updated: 2021/07/03 20:57:15 by xuwang           ###   ########.fr        #
+#    Updated: 2021/07/04 16:14:58 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,15 @@ CHECKER = checker
 
 CC 	= gcc
 
-CFLAGS 	= -Wall -Wextra -Werror #-g3 -fsanitize=address
+CFLAGS 	= -Wall -Wextra -Werror
 
 IFLAGS = -I. -I./libft
 
 LFLAGS = -L./libft -lft
 
-CHECKER = checker
 
-SRCS_P	:= 	srcs/push_swap/num_to_list.c \
+
+SRCS_P	:= 	srcs/push_swap/num_to_stack.c \
 			srcs/push_swap/ft_p.c \
 			srcs/push_swap/ft_r.c \
 			srcs/push_swap/ft_rr.c \
@@ -35,7 +35,7 @@ SRCS_P	:= 	srcs/push_swap/num_to_list.c \
 			srcs/push_swap/utils.c \
 			srcs/push_swap/for_quit.c
 
-SRCS_C	:= 	srcs/push_swap/num_to_list.c \
+SRCS_C	:= 	srcs/push_swap/num_to_stack.c \
 			srcs/push_swap/ft_p.c \
 			srcs/push_swap/ft_r.c \
 			srcs/push_swap/ft_rr.c \
@@ -49,13 +49,13 @@ SRCS_C	:= 	srcs/push_swap/num_to_list.c \
 OBJS_P := $(SRCS_P:%.c=%.o)
 OBJS_C := $(SRCS_C:%.c=%.o)
 
-$(NAME): $(OBJS_P)
+$(NAME): $(OBJS_P) $(OBJS_C)
 	$(MAKE) -C libft
-	$(CC) $(CFLAGS) $(OBJS_P) $(LFLAGS) $(IFLAGS) -o $@
-
-$(CHECKER): $(OBJS_C)
-	$(MAKE) -C libft
-	$(CC) $(CFLAGS) $(OBJS_C) $(LFLAGS) $(IFLAGS) -o $@
+	$(CC) $(CFLAGS) $(OBJS_P) $(LFLAGS) $(IFLAGS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS_C) $(LFLAGS) $(IFLAGS) -o $(CHECKER)
+#$(CHECKER): $(OBJS_C)
+	#$(MAKE) -C libft
+	#$(CC) $(CFLAGS) $(OBJS_C) $(LFLAGS) $(IFLAGS) -o $@
 
 all: $(NAME) $(CHECKER) 
 

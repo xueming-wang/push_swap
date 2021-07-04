@@ -6,39 +6,11 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 15:08:35 by xuwang            #+#    #+#             */
-/*   Updated: 2021/07/04 15:36:35 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/07/04 16:05:49 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-static void	show_stack_v(t_list *a, t_list *b)
-{
-	if (a == NULL && b == NULL)
-		return ;
-	if (a && b)
-		printf("| %12d | %-12d |\n", (int)a->content, (int)b->content);
-	else if (a)
-		printf("| %12d | %-12c |\n", (int)a->content, ' ');
-	else if (b)
-		printf("| %12c | %-12d |\n", ' ', (int)b->content);
-	if (a && b)
-		show_stack_v(a->next, b->next);
-	else if (a)
-		show_stack_v(a->next, NULL);
-	else if (b)
-		show_stack_v(NULL, b->next);
-}
-
-void	option_v(t_stack *stacks)
-{
-	usleep(50000);
-	printf("\033[2J\033[H");
-	printf("-------------------------------\n");
-	printf("| %12s | %-12s |\n", "Stack A", "Stack B");
-	printf("-------------------------------\n");
-	show_stack_v(stacks->a, stacks->b);
-	printf("-------------------------------\n");
-}
 
 static int check_is_sort(t_stack *stack, int size)
 {
@@ -59,7 +31,7 @@ static int check_is_sort(t_stack *stack, int size)
      return (1);
 }
 
-int	ft_strcmp(const char *s1, const char *s2)
+static int	ft_strcmp(const char *s1, const char *s2)
 {
 	int	i;
 
@@ -70,7 +42,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 }
 
 
-int   ft_ope(t_stack *stack, char *line, int read)
+static int   ft_ope(t_stack *stack, char *line, int read)
 {   
     
         if (!ft_strcmp(line, "sa"))
@@ -103,7 +75,7 @@ int   ft_ope(t_stack *stack, char *line, int read)
     return (1);
     
 }
-int check_is_op(t_stack *stack, char *line, int read)
+static int check_is_op(t_stack *stack, char *line, int read)
 {
     if (!ft_ope(stack, line, read))
     {
@@ -114,7 +86,7 @@ int check_is_op(t_stack *stack, char *line, int read)
 }
 void   read_and_check(t_stack *stack)
 {
-    char *line = NULL;
+    char *line;
     int read;
     int i;
     int size;
@@ -131,7 +103,7 @@ void   read_and_check(t_stack *stack)
             free(line);
             quit_error(stack);
         }
-        // option_v(stack);
+        
         free(line);
     }
     if(check_is_sort(stack, size))
@@ -150,8 +122,7 @@ void   read_and_check(t_stack *stack)
 int main(int ac, char**av)
 {
 
-
-    t_stack *stack;
+t_stack *stack;
  
     stack = malloc(sizeof(t_stack));
     if (!stack)

@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 15:11:35 by xuwang            #+#    #+#             */
-/*   Updated: 2021/07/03 17:31:32 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/07/04 16:18:48 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ typedef struct s_stack
     
 }       t_stack;
 
-typedef struct s_ope
-{
-    
-}   t_ope;
+
 
 void   ft_num_three(t_stack *stack);
 void   ft_num_five(t_stack *stack);
@@ -50,8 +47,6 @@ void   ft_rra(t_stack *stack, int print);
 void   ft_rrb(t_stack *stack, int print);
 void   ft_rrr(t_stack *stack, int print);
 t_list *num_to_stack(t_stack *statck, int ac, char **av);
-void    exit_with_error_msg(void);
-void    printstack(t_list *stack); // to delete after
 void	option_v(t_stack *stacks);
 void    quit_success(t_stack *stack);
 void    quit_error(t_stack *stack);
