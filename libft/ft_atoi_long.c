@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 14:17:21 by xuwang            #+#    #+#             */
-/*   Updated: 2021/06/28 14:19:09 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/07/04 17:38:35 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 long long	ft_atoi_long(const char *str)
 {
 	long long	result;
-	int	signe;
+	int			signe;
 
 	result = 0;
 	signe = 1;

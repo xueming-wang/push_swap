@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 14:14:36 by xuwang            #+#    #+#             */
-/*   Updated: 2021/07/04 16:17:15 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/07/04 17:32:03 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ static void  *check_is_num(t_stack *stack, char **av, int index)
             quit_error(stack);
     }
     num = (void *)(intptr_t)ft_atoi_long(av[index]);
-    //需要确认长度
     if ((long long)num > INT32_MAX ||  (long long)num < INT32_MIN)
 		quit_error(stack);
     return (num);

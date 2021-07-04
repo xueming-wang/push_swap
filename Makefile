@@ -6,7 +6,7 @@
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/20 15:11:32 by xuwang            #+#    #+#              #
-#    Updated: 2021/07/04 16:14:58 by xuwang           ###   ########.fr        #
+#    Updated: 2021/07/04 17:52:48 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,9 @@ SRCS_C	:= 	srcs/push_swap/num_to_stack.c \
 			srcs/push_swap/num_more.c \
 			srcs/push_swap/utils.c \
 			srcs/push_swap/for_quit.c \
+			srcs/checker/ft_checker.c \
 			srcs/checker/checker.c
+			
 
 OBJS_P := $(SRCS_P:%.c=%.o)
 OBJS_C := $(SRCS_C:%.c=%.o)

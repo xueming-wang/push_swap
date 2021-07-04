@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 17:52:12 by xuwang            #+#    #+#             */
-/*   Updated: 2021/07/04 16:06:20 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/07/04 18:45:32 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void  ft_alog(t_stack *stack)
     return;
 }
 
-int main(int ac, char **av)
+int main(int argc, char **argv)
 {
     t_stack *stack;
 
@@ -48,7 +48,7 @@ int main(int ac, char **av)
     if (!stack)
         exit(1);
     ft_bzero(stack, sizeof(t_stack));
-    stack->a = num_to_stack(stack, ac, av);
+    stack->a = num_to_stack(stack, argc, argv);
     if (!stack->a)
         return (0);
     ft_alog(stack);
