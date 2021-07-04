@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 17:52:12 by xuwang            #+#    #+#             */
-/*   Updated: 2021/07/01 14:36:59 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/07/03 19:59:54 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,5 @@ int main(int ac, char **av)
         return (0);
     ft_alog(stack);
     exit(EXIT_SUCCESS); 
-    return (0);  
+    return (0);
 }

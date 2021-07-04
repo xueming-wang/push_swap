@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 14:14:36 by xuwang            #+#    #+#             */
-/*   Updated: 2021/07/01 15:24:17 by xuwang           ###   ########.fr       */
+/*   Updated: 2021/07/03 20:29:40 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static int  check_is_dup(t_list *a)
 t_list *num_to_stack(t_stack *stack, int ac, char **av)
 {
     int i;
-    void *num;
+    // void *num;
     void *n;
     t_list *stack_a;
      
@@ -71,28 +71,17 @@ t_list *num_to_stack(t_stack *stack, int ac, char **av)
        quit_success(stack);
     else if (ac == 2)
     {
-        if (!check_is_num(stack, av, i))
+        if (check_is_num(stack, av, i) == NULL)
              quit_error(stack);
         else
             quit_success(stack);
     }
     else
-    {
-        while (av[i])
-        {
-            num = check_is_num(stack, av, i);
-            if (!num)
-                 quit_error(stack);
-            ++i;
-        }
+    {   
         i = 1;
         while (av[i])
         {
             n = check_is_num(stack, av, i);
-            if (!num)
-            {
-                quit_error(stack);
-            }
             ft_lstadd_back(&stack_a, ft_lstnew((void *)(intptr_t)n));
             i++;
         }
@@ -100,4 +89,5 @@ t_list *num_to_stack(t_stack *stack, int ac, char **av)
     if (!check_is_dup(stack_a))
          quit_error(stack);
     return (stack_a);
+    
 }

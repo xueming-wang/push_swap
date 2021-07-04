@@ -6,7 +6,7 @@
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/20 15:11:32 by xuwang            #+#    #+#              #
-#    Updated: 2021/07/03 15:47:24 by xuwang           ###   ########.fr        #
+#    Updated: 2021/07/03 20:57:15 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CHECKER = checker
 
 CC 	= gcc
 
-CFLAGS 	= -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS 	= -Wall -Wextra -Werror #-g3 -fsanitize=address
 
 IFLAGS = -I. -I./libft
 
